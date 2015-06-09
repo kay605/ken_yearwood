@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
   devise_for :kellogg_budget_tables
 
+  # devise_for :users
+
+
+# SETS DEFAULT PAGE
   root 'input#openpage'
 
   get '/openpage', :controller => "input", :action => "openpage"
 
 
-  root 'summary#printsummary'
 
-  get '/printsummary', :controller => "input", :action => "printsummary"
+  # root 'output#printsummary'
+
+  # get '/printsummary', :controller => "output", :action => "printsummary"
   
-  # get("/areas/square/:length_of_side", { :controller => "areas", :action => "square" })
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
