@@ -1,29 +1,51 @@
+<h2>Overview</h2>
+
+<div>
+  <p>This is a tool to help prospective Kellogg school students understand the costs of business school, and how their student loan payments will or will not fit into their post-business school budget.</p>
+
+  <p>The process is as follows:</p>
+
+  <ol>
+    <li>Input Kellogg's published budget</li>
+    <li>Input personal expenses while in Kellogg's two-year MBA program</li>
+    <li>Draft your own post-MBA budget</li>
+  </ol>
+
+  <p>The tool thencalculates the loan amount you may borrow, and illustrates whether or not your monthly loan payments will fit into </p>
+
+  <p>To get started, create a username and password.</p>
+
+</div>
+
+
+
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div class="field">
+  <%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+<div class="field">
+  <%= f.label :password %>
+  <% if @minimum_password_length %>
+  <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "off" %>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+<div class="field">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+<div class="actions">
+  <%= f.submit "Sign up" %>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
