@@ -43,12 +43,12 @@ class KelloggBudgetTable < ActiveRecord::Base
 
 
   def monthly_post_tax_salary
-  	return self.pretaxsalary * .65 / 12
+  	return self.pretaxsalary * 0.65 / 12
   end
 
 
   def monthly_post_tax_bonus
-  	return self.pretaxsalary * (self.bonusrate / 100) * .50 / 12
+  	return self.pretaxsalary * (self.bonusrate / 100) * 0.50 / 12
   end
 
   def total_monthly_expenses
