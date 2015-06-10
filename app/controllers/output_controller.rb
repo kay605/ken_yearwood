@@ -8,4 +8,6 @@ class OutputController < ApplicationController
 
 	end
 
+
+
 end	

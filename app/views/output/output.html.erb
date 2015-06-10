@@ -1,0 +1,136 @@
+<div class="panel panel-default">
+
+	<h1>Here are your Kellogg Budget Tool results!</h1>
+	<p>The results first summarize pieces of important information, then shows your post-MBA budget.</p>
+
+	<div class="panel panel-default">
+		<div class="panel-heading" align="center">
+			<h3 class="panel-title">Estimated Cost of Attendance</h3>
+		</div>
+
+		<table class="table" align="center">
+
+			<tr>
+				<td></td>
+				<td>Year 1</td>
+				<td>Year 2</td>
+			</tr>
+
+			<tr>
+				<td>Cost of Attendance</td>
+				<td><%= @kellogg_cost_estimate_year_1 %>%</td>
+				<td><%= @kellogg_cost_estimate_year_2 %>%</td>
+			</tr>
+
+			<tr colspan="3" align="left">
+				<td>Less:</td>
+			</tr>
+
+			<tr>
+				<td>Scholarships &amp; Aid</td>
+				<td><%= @annualscholarships %>%</td>
+				<td><%= @annualscholarships %>%</td>
+			</tr>
+
+			<tr>
+				<td>Personal Contribution</td>
+				<td><%= @annualpersonalcontribution %>%</td>
+				<td><%= @annualpersonalcontribution %>%</td>
+			</tr>
+
+			<tr>
+				<td>Max Loan Amount</td>
+				<td><%= @maximum_loan_year_1 %>%</td>
+				<td><%= @maximum_loan_year_2 %>%</td>
+			</tr>
+
+		</table>
+
+
+<!-- 	<div class="panel-body">
+		<dl class="dl-horizontal">
+			<dt>Year 1</dt>
+			<dd><%= @kellogg_cost_estimate_year_1 %>%</dd>
+
+			<dt>Year 2</dt>
+			<dd><%= @kellogg_cost_estimate_year_2 %>%</dd>
+
+		</dl>
+	</div> -->
+</div>
+
+<br>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Student Loan Details</h3>
+	</div>
+	<div class="panel-body">
+		You will be permitted to borrow up to <%= @total_loan_amount %>%.
+
+		<dl class="dl-horizontal">
+			<dt>Total Loan Amount</dt>
+			<dd><%= @total_loan_amount %>%</dd>
+
+			<dt>Interest Rate</dt>
+			<dd><%= @loaninterestrate %>%</dd>
+
+			<dt>Pay-off Period</dt>
+			<dd><%= @loanpayoffperiod %>% years</dd>
+
+			<dt>Monthly Loan Payment</dt>
+			<dd><%= @monthly_loan_amount %>% years</dd>
+
+		</dl>
+	</div>
+</div>
+
+<!-- ENDED HERE... NEED TO ADD ITEMIZED BUDGET ITEMS, INCLUDING MONTHLY LOAN PAYMENT AMOUNT-->
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Post-MBA Budget</h3>
+	</div>
+	<div class="panel-body">
+		<p>Annual Income:</p>
+
+		<dl class="dl-horizontal">
+			<dt>Total Loan Amount</dt>
+			<dd><%= @total_loan_amount %>%</dd>
+
+			<dt>Interest Rate</dt>
+			<dd><%= @loaninterestrate %>%</dd>
+
+		</dl>
+
+
+
+
+	</div>
+</div>
+
+
+
+<div>
+	<table border="0" align="center">
+		<tr>
+			<td align="center">
+
+				<button type="button" class="btn btn-primary">
+					Back
+				</button>
+
+			</td>
+
+			<td align="center">
+
+				<button type="button" class="btn btn-success">
+					Done
+				</button>
+			</td>
+		</tr>
+
+	</table>
+</div>
+
+</div>
