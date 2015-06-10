@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
 # SETS DEFAULT PAGE
   root 'input#openpage'
-
   get '/openpage', :controller => "input", :action => "openpage"
+
+  
+  get '/printsummary', :controller => "output", :action => "printsummary"  
 
 
 
