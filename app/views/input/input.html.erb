@@ -1,5 +1,4 @@
-
-<form class="form-horizontal">
+<form class="form-horizontal" data-toggle="validator">
 
 	<h1 align="center">Welcome to the Kellogg Budgeting Tool</h1>
 
@@ -11,7 +10,7 @@
 	<div class="form-group">
 		<label for="kelloggstartyear" class="control-label col-xs-2">Matriculation Year</label>
 		<div class="col-xs-10">
-			<input name="kelloggstartyear" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="What year will you start classes at Kellogg?">
+			<input name="kelloggstartyear" type="number" maxlength="4" minlength="4" class="form-control" id="inputkelloggstartyear" placeholder="What year will you start classes at Kellogg?">
 		</div>
 	</div>
 	
@@ -19,18 +18,19 @@
 	<div class="form-group">
 		<label for="kelloggbudgetyear" class="control-label col-xs-2">Budget Year</label>
 		<div class="col-xs-10">
-			<input name="kelloggbudgetyear" type="number" class="form-control" id="inputstartyear" placeholder="What is the start year of the most recent budget Kellogg published online?">
+			<input name="kelloggbudgetyear" type="number" maxlength="4" minlength="4" class="form-control" id="inputkelloggbudgetyear" placeholder="What is the start year of the most recent budget Kellogg published online?">
 		</div>
 	</div>
 
 	<br>
 	
-	<p>Enter the cost of attendance figures that Kellogg publishes online:</p>
+	<p>Enter the cost of attendance figures that <a href="http://www.kellogg.northwestern.edu/programs/full-time-mba/tuition-financial-aid.aspx">Kellogg publishes online</a>:</p>
 
 	<div class="form-group">
 		<label for="kelloggtuition" class="control-label col-xs-2">Tuition</label>
 		<div class="col-xs-10">
-			<input name="kelloggtuition" type="number" class="form-control" id="inputstartyear" placeholder="Enter tuition amount">
+			<!-- <span class="input-group-addon" id="basic-addon1">$</span> -->
+			<input name="kelloggtuition" type="number" class="form-control" id="inputkelloggtuition" placeholder="Enter tuition amount">
 		</div>
 	</div>
 
@@ -38,7 +38,7 @@
 	<div class="form-group">
 		<label for="kelloggroomboard" class="control-label col-xs-2">Room and Board</label>
 		<div class="col-xs-10">
-			<input name="kelloggroomboard" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of room and board">
+			<input name="kelloggroomboard" type="number" class="form-control" id="inputkelloggroomboard" placeholder="Enter cost of room and board">
 		</div>
 	</div>
 
@@ -46,56 +46,63 @@
 	<div class="form-group">
 		<label for="kelloggbooks" class="control-label col-xs-2">Books and Supplies</label>
 		<div class="col-xs-10">
-			<input name="kelloggbooks" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of books and supplies">
+			<input name="kelloggbooks" type="number" class="form-control" id="inputkelloggbooks" placeholder="Enter cost of books and supplies">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="kelloggtravelexpenses" class="control-label col-xs-2">Travel</label>
 		<div class="col-xs-10">
-			<input name="kelloggtravelexpenses" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of tuition">
+			<input name="kelloggtravelexpenses" type="number" class="form-control" id="inputkelloggtravelexpenses" placeholder="Enter cost of tuition">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="kelloggpersonalexpenses" class="control-label col-xs-2">Personal Expenses</label>
 		<div class="col-xs-10">
-			<input name="kelloggpersonalexpenses" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of personal expenses">
+			<input name="kelloggpersonalexpenses" type="number" class="form-control" id="inputkelloggpersonalexpenses" placeholder="Enter cost of personal expenses">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="kellogghealthinsurance" class="control-label col-xs-2">Health Insurance</label>
 		<div class="col-xs-10">
-			<input name="kellogghealthinsurance" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of health insurance">
+			<input name="kellogghealthinsurance" type="number" class="form-control" id="inputkellogghealthinsurance" placeholder="Enter cost of health insurance">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="kelloggcomputerequipment" class="control-label col-xs-2">Computer Equipment</label>
 		<div class="col-xs-10">
-			<input name="kelloggcomputerequipment" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of computer equipment">
+			<input name="kelloggcomputerequipment" type="number" class="form-control" id="inputkelloggcomputerequipment" placeholder="Enter cost of computer equipment">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="kelloggstudentlifefee" class="control-label col-xs-2">Student Life Fee</label>
 		<div class="col-xs-10">
-			<input name="kelloggstudentlifefee" type="number" class="form-control" id="inputstartyear" placeholder="Enter student life fee amount">
+			<input name="kelloggstudentlifefee" type="number" class="form-control" id="inputkelloggstudentlifefee" placeholder="Enter student life fee amount">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="kelloggstudentassociationfee" class="control-label col-xs-2">Student Association</label>
+		<div class="col-xs-10">
+			<input name="kelloggstudentassociationfee" type="number" class="form-control" id="inputkelloggstudentassociationfee" placeholder="Enter student association fee">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="kelloggenrollmentfees" class="control-label col-xs-2">Enrollment Fees</label>
 		<div class="col-xs-10">
-			<input name="kelloggenrollmentfees" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of enrollment fees">
+			<input name="kelloggenrollmentfees" type="number" class="form-control" id="inputkelloggenrollmentfees" placeholder="Enter cost of enrollment fees">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="kelloggloanfees" class="control-label col-xs-2">Loan Fees</label>
 		<div class="col-xs-10">
-			<input name="kelloggloanfees" type="number" class="form-control" id="inputstartyear" placeholder="Enter cost of loan fees">
+			<input name="kelloggloanfees" type="number" class="form-control" id="inputkelloggloanfees" placeholder="Enter cost of loan fees">
 		</div>
 	</div>
 
@@ -106,7 +113,7 @@
 	<div class="form-group">
 		<label for="scholarships" class="control-label col-xs-2">Scholarships and Aid</label>
 		<div class="col-xs-10">
-			<input name="scholarships" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter the total amount of any scholarships or financial aid">
+			<input name="scholarships" type="number" class="form-control" id="inputscholarships" placeholder="Enter the total amount of any scholarships or financial aid">
 		</div>
 	</div>
 	
@@ -114,7 +121,7 @@
 	<div class="form-group">
 		<label for="personalcontribution" class="control-label col-xs-2">Personal Contribution</label>
 		<div class="col-xs-10">
-			<input name="personalcontribution" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter the total amount you intend to contribute from your personal savings">
+			<input name="personalcontribution" type="number" class="form-control" id="inputpersonalcontribution" placeholder="Enter the total amount you intend to contribute from your personal savings">
 		</div>
 	</div>
 
@@ -125,7 +132,7 @@
 	<div class="form-group">
 		<label for="loaninterestrate" class="control-label col-xs-2">Interest Rate</label>
 		<div class="col-xs-10">
-			<input name="loaninterestrate" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="What interest rate can you borrow at?">
+			<input name="loaninterestrate" type="number" step="0.25" class="form-control" id="inputloaninterestrate" placeholder="What interest rate can you borrow at?">
 		</div>
 	</div>
 	
@@ -133,19 +140,20 @@
 	<div class="form-group">
 		<label for="loanpayoffperiod" class="control-label col-xs-2">Pay-off Period</label>
 		<div class="col-xs-10">
-			<input name="loanpayoffperiod" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="How many years will it take to pay off your loans? (max of 10 years)">
+			<input name="loanpayoffperiod" type="number" class="form-control" id="inputloanpayoffperiod" placeholder="How many years will it take to pay off your loans? (max of 10 years)">
 		</div>
 	</div>
 
 	<br>
 
 	<h2 align="center">Draft your personal post-MBA budget</h2>
-	<p>Annual Income after business school:</p>
+	
+	<p>Annual Income after business school (reference the <a href="http://www.kellogg.northwestern.edu/career_employer/employment_statistics.aspx">Kellogg employement report</a> for salary statistics):</p>
 
 	<div class="form-group">
 		<label for="pretaxsalary" class="control-label col-xs-2">Pre-tax Salary</label>
 		<div class="col-xs-10">
-			<input name="pretaxsalary" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="What interest rate can you borrow at?">
+			<input name="pretaxsalary" type="number" class="form-control" id="inputpretaxsalary" placeholder="What interest rate can you borrow at?">
 		</div>
 	</div>
 	
@@ -153,7 +161,7 @@
 	<div class="form-group">
 		<label for="bonusrate" class="control-label col-xs-2">Pre-tax Bonus Rate</label>
 		<div class="col-xs-10">
-			<input name="bonusrate" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Entered expected bonus rate (percentage of salary)">
+			<input name="bonusrate" type="number" class="form-control" id="inputbonusrate" placeholder="Entered expected bonus rate (percentage of salary)">
 		</div>
 	</div>
 	
@@ -163,84 +171,84 @@
 	<div class="form-group">
 		<label for="carinsurance" class="control-label col-xs-2">Car Insurance</label>
 		<div class="col-xs-10">
-			<input name="carinsurance" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="What do you anticipate paying for car insurance?">
+			<input name="carinsurance" type="number" class="form-control" id="inputcarinsurance" placeholder="What do you anticipate paying for car insurance?">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="carpayment" class="control-label col-xs-2">Car Payment</label>
 		<div class="col-xs-10">
-			<input name="carpayment" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="If you'll have a car, what will your monthly payment be?">
+			<input name="carpayment" type="number" class="form-control" id="inputcarpayment" placeholder="If you'll have a car, what will your monthly payment be?">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="rentmortgage" class="control-label col-xs-2">Rent or Mortgage</label>
 		<div class="col-xs-10">
-			<input name="rentmortgage" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated rent">
+			<input name="rentmortgage" type="number" class="form-control" id="inputrentmortgage" placeholder="Enter anticipated rent">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="utilities" class="control-label col-xs-2">Utilities</label>
 		<div class="col-xs-10">
-			<input name="utilities" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated cost of utilities">
+			<input name="utilities" type="number" class="form-control" id="inpututilities" placeholder="Enter anticipated cost of utilities">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="cableinternet" class="control-label col-xs-2">Cable and Internet</label>
 		<div class="col-xs-10">
-			<input name="cableinternet" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of cable and internet">
+			<input name="cableinternet" type="number" class="form-control" id="inputcableinternet" placeholder="Enter anticipated monthly cost of cable and internet">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="parking" class="control-label col-xs-2">Parking</label>
 		<div class="col-xs-10">
-			<input name="parking" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of parking">
+			<input name="parking" type="number" class="form-control" id="inputparking" placeholder="Enter anticipated monthly cost of parking">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="gas" class="control-label col-xs-2">Gas</label>
 		<div class="col-xs-10">
-			<input name="gas" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of gas">
+			<input name="gas" type="number" class="form-control" id="inputgas" placeholder="Enter anticipated monthly cost of gas">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="cellphone" class="control-label col-xs-2">Cell Phone</label>
 		<div class="col-xs-10">
-			<input name="cellphone" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of mobile phone">
+			<input name="cellphone" type="number" class="form-control" id="inputcellphone" placeholder="Enter anticipated monthly cost of mobile phone">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="food" class="control-label col-xs-2">Food</label>
 		<div class="col-xs-10">
-			<input name="food" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of food">
+			<input name="food" type="number" class="form-control" id="inputfood" placeholder="Enter anticipated monthly cost of food">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="publictransit" class="control-label col-xs-2">Public Transit</label>
 		<div class="col-xs-10">
-			<input name="publictransit" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of public transit">
+			<input name="publictransit" type="number" class="form-control" id="inputpublictransit" placeholder="Enter anticipated monthly cost of public transit">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="entertainment" class="control-label col-xs-2">Entertainment</label>
 		<div class="col-xs-10">
-			<input name="entertainment" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of entertainment">
+			<input name="entertainment" type="number" class="form-control" id="inputentertainment" placeholder="Enter anticipated monthly cost of entertainment">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="generalspending" class="control-label col-xs-2">General Spending</label>
 		<div class="col-xs-10">
-			<input name="generalspending" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter anticipated monthly cost of other general spending">
+			<input name="generalspending" type="number" class="form-control" id="inputgeneralspending" placeholder="Enter anticipated monthly cost of other general spending">
 		</div>
 	</div>
 
@@ -249,21 +257,21 @@
 	<div class="form-group">
 		<label for="retirementsavings" class="control-label col-xs-2">Retirement Savings</label>
 		<div class="col-xs-10">
-			<input name="retirementsavings" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="Enter annual amount contributed to a retirement account">
+			<input name="retirementsavings" type="number" class="form-control" id="inputretirementsavings" placeholder="Enter annual amount contributed to a retirement account">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label for="personalsavings" class="control-label col-xs-2">Personal Savings Rate</label>
 		<div class="col-xs-10">
-			<input name="personalsavingsrate" maxlength="4" type="number" class="form-control" id="inputstartyear" placeholder="What percentage of your pre-tax salary do you intend to save each year?">
+			<input name="personalsavingsrate" type="number" class="form-control" id="inputpersonalsavingsrate" placeholder="What percentage of your pre-tax salary do you intend to save each year?">
 		</div>
 	</div>
 
 	<br>
 
 	<div align="center">
-		<button type="button" class="btn btn-info btn-block">
+		<button type="submit" class="btn btn-info btn-block">
 			Finish	
 		</button>
 	</div>
@@ -274,28 +282,6 @@
 
 	<br>
 	<br>
-
-	<table border="0">
-		<tr>
-			<td>
-				
-				<button type="button" class="btn btn-primary">
-					Back
-				</button>
-
-			</td>
-
-			<td>
-				
-				<button type="button" class="btn btn-success">
-					Done
-				</button>
-			</td>
-		</tr>
-
-	</table>
-
-
 
 
 

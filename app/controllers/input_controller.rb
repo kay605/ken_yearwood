@@ -24,6 +24,7 @@ class InputController < ApplicationController
 		@kellogghealthinsurance = params[:kellogghealthinsurance].to_i
 		@kelloggcomputerequipment = params[:kelloggcomputerequipment].to_i
 		@kelloggstudentlifefee = params[:kelloggstudentlifefee].to_i
+		@kelloggstudentassociationfee = params[:kelloggstudentassociationfee].to_i
 		@kelloggenrollmentfees = params[:kelloggenrollmentfees].to_i
 		@kelloggloanfees = params[:kelloggloanfees].to_i
 		
@@ -54,10 +55,12 @@ class InputController < ApplicationController
 
 
 		# CALCULATIONS
+
+		# ASSUMES 5% NOMINAL ANNUAL COST INCREASE 
 		@tuition_year_1 = @kelloggtuition * ( 1.05 ** (@kelloggstartyear - @kelloggbudgetyear) )
 		@tuition_year_2 = @tuition_year_1 * 1.05
 
-		@kellogg_cost_estimate_year_1 = ( @kelloggtuition + @kelloggroomboard + @kelloggbooks + @kelloggtravelexpenses + @kelloggpersonalexpenses + @kellogghealthinsurance + @kelloggcomputer + @kelloggstudentlifefee + @kelloggenrollmentfee + @kelloggloanfees ) * ( 1.05 ** (@kelloggstartyear - @kelloggbudgetyear) )
+		@kellogg_cost_estimate_year_1 = ( @kelloggtuition + @kelloggroomboard + @kelloggbooks + @kelloggtravelexpenses + @kelloggpersonalexpenses + @kellogghealthinsurance + @kelloggcomputer + @kelloggstudentlifefee + @kelloggstudentassociationfee + @kelloggenrollmentfee + @kelloggloanfees ) * ( 1.05 ** (@kelloggstartyear - @kelloggbudgetyear) )
 		@kellogg_cost_estimate_year_2 = @kellogg_cost_estimate_year_1 * 1.05
 
 		@annualscholarships = @scholarships / 2
@@ -68,12 +71,21 @@ class InputController < ApplicationController
 		@total_loan_amount = @kellogg_cost_estimate_year_1 + @kellogg_cost_estimate_year_2
 		@monthly_loan_amount = ( (@loaninterestrate / (12 * 100) ) * @loanpayoffperiod ) / ( 1 - (1 + (@loaninterestrate / (12 * 100) ) ** (-12 * @loanpayoffperiod ) ))
 
-		@monthly_post_tax_salary = @pretaxsalary * 0.65 / 12
-		@monthly_post_tax_bonus = @pretaxsalary * (@bonusrate / 100) * 0.50 / 12
+		@monthly_pre_tax_salary = @pretaxsalary / 12
+		@monthly_post_tax_salary = @monthly_pre_tax_salary * 0.65
+		
+		@monthly_pre_tax_bonus = @pretaxsalary * (@bonusrate / 100) / 12
+		@monthly_post_tax_bonus = @monthly_pre_tax_bonus * 0.50
 
-		@total_monthly_expenses = @carinsurance + @carpayment + @rentmortgage + @utilities + @cableinternet + @parking + @gas + @cellphone + @food + @publictransit + @entertainment + @generalspending
 
-		@monthly_savings = ( @monthly_post_tax_salary + @monthly_post_tax_bonus ) - @total_monthly_expenses
+		@total_monthly_expenses = @monthly_loan_amount + @carinsurance + @carpayment + @rentmortgage + @utilities + @cableinternet + @parking + @gas + @cellphone + @food + @publictransit + @entertainment + @generalspending
+
+		@monthly_savings_subtotal = ( @monthly_post_tax_salary + @monthly_post_tax_bonus ) - @total_monthly_expenses
+		@monthly_retirement_savings = @retirementsavings / 12
+		@monthly_personal_savings = ( @personalsavingsrate / 100 ) * @monthly_pre_tax_salary
+
+		@total_monthly_savings = @monthly_savings_subtotal - @monthly_retirement_savings - @monthly_personal_savings		
+		
 
 	end
 

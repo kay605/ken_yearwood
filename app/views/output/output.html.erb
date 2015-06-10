@@ -1,14 +1,16 @@
-<div class="panel panel-default">
+<div>
 
-	<h1>Here are your Kellogg Budget Tool results!</h1>
-	<p>The results first summarize pieces of important information, then shows your post-MBA budget.</p>
+	<h1 align="center">Here are your Kellogg Budget Tool results!</h1>
+	<p align="center">The results first summarize pieces of important information, then shows your post-MBA budget.</p>
+
+	<br>
 
 	<div class="panel panel-default">
 		<div class="panel-heading" align="center">
 			<h3 class="panel-title">Estimated Cost of Attendance</h3>
 		</div>
 
-		<table class="table" align="center">
+		<table border="0" class="table" align="center">
 
 			<tr>
 				<td></td>
@@ -17,7 +19,13 @@
 			</tr>
 
 			<tr>
-				<td>Cost of Attendance</td>
+				<td>
+
+					<!-- <dl class="dl-horizontal"> -->
+					<dt>Cost of Attendance</dt>
+					<!-- </dl> -->
+
+				</td>
 				<td><%= @kellogg_cost_estimate_year_1 %>%</td>
 				<td><%= @kellogg_cost_estimate_year_2 %>%</td>
 			</tr>
@@ -27,19 +35,40 @@
 			</tr>
 
 			<tr>
-				<td>Scholarships &amp; Aid</td>
+				<td>
+
+					<dl class="dl-horizontal">
+						<dt>Scholarships &amp; Aid</dt>
+					</dl>
+
+				</td>
 				<td><%= @annualscholarships %>%</td>
 				<td><%= @annualscholarships %>%</td>
 			</tr>
 
 			<tr>
-				<td>Personal Contribution</td>
+				<td>
+
+					<dl class="dl-horizontal">
+						<dt>Personal Contribution</dt>
+					</dl>
+
+
+
+				</td>
 				<td><%= @annualpersonalcontribution %>%</td>
 				<td><%= @annualpersonalcontribution %>%</td>
 			</tr>
 
 			<tr>
-				<td>Max Loan Amount</td>
+				<td>
+
+					<dl class="dl-horizontal">
+						<dt>Max Loan Amount</dt>
+					</dl>
+
+
+				</td>
 				<td><%= @maximum_loan_year_1 %>%</td>
 				<td><%= @maximum_loan_year_2 %>%</td>
 			</tr>
@@ -62,11 +91,13 @@
 <br>
 
 <div class="panel panel-default">
-	<div class="panel-heading">
+	<div class="panel-heading" align="center">
 		<h3 class="panel-title">Student Loan Details</h3>
 	</div>
 	<div class="panel-body">
-		You will be permitted to borrow up to <%= @total_loan_amount %>%.
+		<p>You will be permitted to borrow up to <%= @total_loan_amount %>%.</p>
+
+		<br>
 
 		<dl class="dl-horizontal">
 			<dt>Total Loan Amount</dt>
@@ -78,59 +109,126 @@
 			<dt>Pay-off Period</dt>
 			<dd><%= @loanpayoffperiod %>% years</dd>
 
-			<dt>Monthly Loan Payment</dt>
+			<dt>Monthly Loan Pmt</dt>
 			<dd><%= @monthly_loan_amount %>% years</dd>
 
 		</dl>
 	</div>
 </div>
 
-<!-- ENDED HERE... NEED TO ADD ITEMIZED BUDGET ITEMS, INCLUDING MONTHLY LOAN PAYMENT AMOUNT-->
 
 <div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Post-MBA Budget</h3>
+	<div class="panel-heading" align="center">
+		<h3 class="panel-title">Post-MBA Monthly Budget</h3>
 	</div>
 	<div class="panel-body">
-		<p>Annual Income:</p>
+		<p>Monthly Income:</p>
 
 		<dl class="dl-horizontal">
-			<dt>Total Loan Amount</dt>
-			<dd><%= @total_loan_amount %>%</dd>
+			<dt>Pre-tax Salary</dt>
+			<dd><%= @monthly_pre_tax_salary %>%</dd>
 
-			<dt>Interest Rate</dt>
-			<dd><%= @loaninterestrate %>%</dd>
+			<dt>Pre-tax Bonus</dt>
+			<dd><%= @monthly_pre_tax_bonus %>%</dd>
+
+			<br>
+
+			<dt>Post-tax Salary</dt>
+			<dd><%= @monthly_post_tax_salary %>%</dd>
+
+			<dt>Post-tax Bonus</dt>
+			<dd><%= @monthly_post_tax_bonus %>%</dd>
+
+		</dl>
+
+		<p>Less Monthly Expenses:</p>
+
+		<dl class="dl-horizontal">
+			<dt>Loan Payment</dt>
+			<dd><%= @monthly_loan_amount %>%</dd>
+
+			<dt>Car Insurance</dt>
+			<dd><%= @carinsurance %>%</dd>
+
+			<dt>Car Payment</dt>
+			<dd><%= @carpayment %>%</dd>
+
+			<dt>Rent or Mortgage</dt>
+			<dd><%= @rentmortgage %>%</dd>
+
+			<dt>Utilities</dt>
+			<dd><%= @utilities %>%</dd>
+
+			<dt>Cable &amp; Internet</dt>
+			<dd><%= @cableinternet %>%</dd>
+
+			<dt>Parking</dt>
+			<dd><%= @parking %>%</dd>
+
+			<dt>Gas</dt>
+			<dd><%= @gas %>%</dd>
+
+			<dt>Cellphone</dt>
+			<dd><%= @cellphone %>%</dd>
+
+			<dt>Food</dt>
+			<dd><%= @food %>%</dd>
+
+			<dt>Public Transit</dt>
+			<dd><%= @publictransit %>%</dd>
+
+			<dt>Entertainment</dt>
+			<dd><%= @entertainment %>%</dd>
+
+			<dt>General Spending</dt>
+			<dd><u><%= @generalspending %>%</u></dd>
+
+			<br>
+
+			<dt>Expenses Subtotal</dt>
+			<dd><%= @total_monthly_expenses %>%</dd>
+			
+			<br>
+
+			<dt>Savings Subtotal</dt>
+			<dd><%= @monthly_savings_subtotal %>%</dd>
+
+			<br>
+
+			<p>Less Savings ("paying yourself"):</p>
+
+			<dt>Retirement Savings</dt>
+			<dd><%= @monthly_retirement_savings %>%</dd>
+
+			<dt>Other Savings</dt>
+			<dd><u> <%= @monthly_personal_savings %>% </u></dd>
+
+			<br>
+
+			<dt>Monthly Savings</dt>
+			<dd><%= @total_monthly_savings %>%</dd>
+
+			<br>
+
+			<p align="center">If the monthly savings figure above is positive, you're in good shape!</p>
+			<p align="center">If it's negative, consider re-evaluating your budget and/or the amount of debt you intend to take on for business school.</p>
 
 		</dl>
 
 
 
-
 	</div>
 </div>
 
+<!-- THIS BUTTON REDIRECTS TO THE INITIAL FORM -->
 
-
-<div>
-	<table border="0" align="center">
-		<tr>
-			<td align="center">
-
-				<button type="button" class="btn btn-primary">
-					Back
-				</button>
-
-			</td>
-
-			<td align="center">
-
-				<button type="button" class="btn btn-success">
-					Done
-				</button>
-			</td>
-		</tr>
-
-	</table>
+<div align="center">
+	<button type="button" class="btn btn-info btn-block">
+		Done	
+	</button>
 </div>
+
+<br>
+<br>
 
 </div>
